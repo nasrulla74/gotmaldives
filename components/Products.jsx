@@ -1,4 +1,7 @@
+
+
 import React from 'react';
+import Image from 'next/image'
 import Link from 'next/link';
 import { AiOutlineWifi } from "react-icons/ai";
 import { AiOutlineCoffee } from "react-icons/ai";
@@ -6,7 +9,7 @@ import { MdOutlineRoomService } from "react-icons/md";
 import { IoRestaurantOutline } from "react-icons/io5";
 import { TbSpeedboat } from "react-icons/tb";
 
-import { urlFor } from '../src/sanity/lib/client';
+import { urlFor } from '../lib/client';
 
 
 const Product = ({ product: { image, name, slug  } }) => {
@@ -15,10 +18,12 @@ const Product = ({ product: { image, name, slug  } }) => {
      
    
      <div className="border-spacing-2 rounded-xl p-3 shadow-xl ring-1 hover:opacity-50 sm:flex-shrink-0">
-        {image ? <img className="h-48 w-full rounded-xl object-cover sm:w-60" src={urlFor(image && image[0])} alt={slug} />
+        {image ? 
+         <Image className="h-48 w-full rounded-xl object-cover sm:w-60" width={300} height={300}  src={urlFor(image && image[0]).url()} alt={slug} />
+        // <Image className="h-48 w-full rounded-xl object-cover sm:w-60" src={image} alt={slug} />
 
         : 
-        <img className="h-48 w-full rounded-xl object-cover sm:w-60" src='/assets/no_image.jpg' alt={slug} />
+        <Image className="h-48 w-full rounded-xl object-cover sm:w-60" width={300} height={300} src='/assets/no_image.jpg' alt={slug} />
 
       }
         
@@ -54,30 +59,6 @@ const Product = ({ product: { image, name, slug  } }) => {
           
         </div>
       </div>
-      
-      
-
-      
-    
-  
-      
-      
-      {/* <Link href={`/product/${slug.current}`}>
-        <div className="product-card">
-          <img 
-            src={urlFor(image && image[0])}
-            width={250}
-            height={250}
-            className="product-image"
-          />
-          <p className="product-name">{name}</p>
-          
-        </div>
-      </Link> */}
-      
-
-       
-      
 
     </div>
 

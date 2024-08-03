@@ -1,8 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { urlFor } from '../src/sanity/lib/client';
-// import product from '../src/sanity/product';
+import { urlFor } from '../lib/client';
 
 
 
@@ -13,7 +12,6 @@ const Facilities = ({ product }) => {
       facilities
       } = product;
     
-      console.log(facilities)
       
   return (
     <>

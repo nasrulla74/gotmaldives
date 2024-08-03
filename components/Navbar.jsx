@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { AiOutlineShopping } from 'react-icons/ai'
+import Image from 'next/image'
 
 
 const Navbar = () => {
@@ -15,13 +15,13 @@ const Navbar = () => {
         <div className="container flex flex-col flex-wrap items-center p-5 mx-auto md:flex-row">
 
             <nav className="flex flex-wrap items-center text-base lg:w-2/5 md:ml-auto">
-                <a href="/" className="mr-5 font-medium hover:text-gray-900">Home</a>
-                <a href="#_" className="mr-5 font-medium hover:text-gray-900">About</a>
+                <Link href="/" className="mr-5 font-medium hover:text-gray-900">Home</Link>
+                <Link href="#_" className="mr-5 font-medium hover:text-gray-900">About</Link>
                 
             </nav>
             <a
                 className="flex items-center order-first mb-4 font-medium text-gray-900 lg:order-none lg:w-1/5 title-font lg:items-center lg:justify-center md:mb-0">
-                <img src='/assets/got-logo.jpg' className="h-12 rounded-lg shadow-lg ring-1 ring-blu p-1" alt="gotmaldives" />
+                <Image src='/assets/got-logo.jpg' width={100} height={90} className="h-12 rounded-lg shadow-lg ring-1 ring-blu p-1" alt="gotmaldives" />
             </a>
             <div className="inline-flex items-center h-full ml-5 lg:w-2/5 lg:justify-end lg:ml-0">
                 <a href="#_" className="mr-5 font-medium hover:text-gray-900">Contact Us</a>

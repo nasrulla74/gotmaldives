@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
     <div className="py-8 mx-auto">
         <div className="flex flex-col items-center text-center">
             <a href="#">
-                <img className="h-12 rounded-lg shadow-lg ring-1 ring-blu p-1 mb-5" src="/assets/got-logo.jpg" alt="got logo"/>
+                <Image className="h-12 rounded-lg shadow-lg ring-1 ring-blu p-1 mb-5" src="/assets/got-logo.jpg" width={100} height={90} alt="got logo"/>
             </a>
 
         </div>

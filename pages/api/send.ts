@@ -19,7 +19,7 @@ interface EmailTemplateProps {
 }
 
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const sendmail_resend = async (req: NextApiRequest, res: NextApiResponse) => {
   const { resort_name, room_type, user_name, user_email, meal_plan, transfer, message, arrival_date, departure_date  } = req.body;
   const { data, error } = await resend.emails.send({
     from: 'Acme <gotmaldives@noreply.appeul.com>',
@@ -34,3 +34,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   res.status(200).json(data);
 };
+
+export default sendmail_resend;

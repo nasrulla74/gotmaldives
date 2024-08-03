@@ -1,9 +1,9 @@
 import Facilities from "../../components/Facilities";
 import RoomType from "../../components/room_types";
-import { client, urlFor } from "../../src/sanity/lib/client";
+import { client, urlFor } from "../../lib/client";
 import React, { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-// import { Product } from '../../components';
+import Image from 'next/image'
 import { PiCheckCircleDuotone } from "react-icons/pi";
 import BookingForm from "../../components/BookingForm";
 import { useStateContext } from "../../context/StateContext";
@@ -32,26 +32,30 @@ const ProductDetails = ({ products, product }) => {
       <div className="product-detail-container lg:justify-center">
         <div>
           <div className="">
-            <img
-              src={urlFor(image && image[index])}
+            <Image
+              src={urlFor(image && image[index]).url()}
               className="product-detail-image"
+              alt="product_image"
+              width={1024} height={685}
             />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
-              <img
+              <Image
+                width={50} height={50}
                 key={i}
-                src={urlFor(item)}
+                src={urlFor(item).url()}
                 className={
                   i === index ? "small-image selected-image" : "small-image"
                 }
                 onMouseEnter={() => setIndex(i)}
+                alt="image selector"
               />
             ))}
           </div>
         </div>
         <div className=" hidden xl:block ring-1 ring-gray-900 rounded-lg content-center">
-          <img src="/assets/map_maldives.jpg" className="p-2 rounded-lg  object-center" alt="map_maldives" />
+          <Image src="/assets/map_maldives.jpg" className="p-2 rounded-lg  object-center" alt="map_maldives" width={240} height={780} />
           <div className="m-4 flex justify-center">
           <button id="btn_more" className="w-full rounded-lg p-1 px-5 py-2 ring-1  hover:bg-cyan-950 hover:text-white" >ABOUT MALDIVES</button>
           </div>
