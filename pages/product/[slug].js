@@ -39,7 +39,7 @@ const ProductDetails = ({ products, product }) => {
               width={1024} height={685}
             />
           </div>
-          <div className="small-images-container">
+          <div className="small-images-container overflow-hidden">
             {image?.map((item, i) => (
               <Image
                 width={50} height={50}

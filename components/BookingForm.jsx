@@ -105,20 +105,28 @@ const BookingForm = () => {
   return (
     <div className="cart-wrapper" ref={bookingformRef}>
       
-      <div className="cart-container">
+      <div className="cart-container overflow-auto shadow-xl mb-4">
         <button
         type="button"
         className="cart-heading mb-4"
         onClick={() => setShowCart(false)}>
           <AiOutlineLeft />
           <span className="heading">Booking Request</span>
-          
         </button>
+
  
         <form onSubmit={sendEmailResend}>    
           <section className="text-gray-600 body-font relative">
+            <div>
+            <span className="ml-10 text-gotPrimary font-bold"> Destination:</span> <span className=' text-gotPrimary font-bold'>{selectedProduct}</span>
+            </div>
+            <div className="mb-2">
+            <span className="ml-10  text-gotPrimary font-bold"> Room Type:</span> <span className=' text-gotPrimary font-bold'>{selectedRoomType}</span>
+            </div>
+          
+
             <div className='mx-10'>
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <label htmlFor="resort_name_label" className="leading-7 text-sm text-gray-600">Booking Destination</label>
                   <input type="text"  id="resort_name" 
                   name="resort_name" disabled 
@@ -127,8 +135,8 @@ const BookingForm = () => {
                   required 
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out" />
                   
-                </div>
-                <div className="mb-4">
+                </div> */}
+                <div className="mb-2">
                   <label htmlFor="arrival_date_label" className="leading-7 text-sm text-gray-600">Arrival Date</label>
                     <div className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out">
                     <DatePicker
@@ -140,7 +148,7 @@ const BookingForm = () => {
                       name="arrival_date"/>
                     </div>
                 </div>
-                <div className="mb-4">
+                <div className="mb-2">
                   <label htmlFor="arrival_date_label" className="leading-7 text-sm text-gray-600">Departure Date</label>
                     <div className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out">
                     <DatePicker
@@ -153,7 +161,7 @@ const BookingForm = () => {
                     </div>
                 </div>
                 
-                <div className="mb-4">
+                {/* <div className="mb-2">
                   <label htmlFor="room_type_label" className="leading-7 text-sm text-gray-600">Room Type</label>
                   <input type="text" 
                   id="room_type" 
@@ -164,8 +172,8 @@ const BookingForm = () => {
                   required
                   className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                   
-                </div>
-                <div className="mb-4">
+                </div> */}
+                <div className="mb-2">
                 <label htmlFor="meal_plan_label" className="leading-7 text-sm text-gray-600">Meal Plan</label>
                   <select name="meal_plan" id="meal_plan" 
                   onChange={handleChange} 
@@ -179,7 +187,7 @@ const BookingForm = () => {
                       
                   </select>
                 </div>
-                <div className="mb-4">
+                <div className="mb-2">
                 <label htmlFor="transfer_label"  className="leading-7 text-sm text-gray-600">Transfer Type</label>
                   <select name="transfer" onChange={handleChange} id="transfer" 
                   value={formData.value}
@@ -193,19 +201,19 @@ const BookingForm = () => {
                 </div>
 
 
-                <div className="mb-4">
+                <div className="mb-2">
                   <label htmlFor="email_label" className="leading-7 text-sm text-gray-600">Your Email</label>
                   <input type="email" onChange={handleChange} required value={formData.value} id="user_email" name="user_email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
-                <div className="mb-4">
+                <div className="mb-2">
                   <label htmlFor="user_name_label" className="leading-7 text-sm text-gray-600">Your Name</label>
                   <input type="text" id="user_name" required onChange={handleChange} value={formData.value} name="user_name" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
-                <div className="mb-4">
+                <div className="mb-2">
                   <label htmlFor="message_label" className="leading-7 text-sm text-gray-600">Message</label>
                   <textarea id="message" onChange={handleChange}  value={formData.value} name="message" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                 </div>
-                <button type='submit' className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Send Request</button>
+                <button type='submit' className="text-white bg-gotPrimary border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Send Request</button>
                 <button className="py-2 px-6 ml-5 ring-1 hover:bg-slate-300 text-lg rounded" onClick={() => setShowCart(false)}>Cancel</button>
               </div>
             
