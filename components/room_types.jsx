@@ -32,7 +32,7 @@ const RoomType = ({ product }) => {
               <div key={i} className="flex justify-center bg-gray-100">
                 
                   <div className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
-                    { item.image ?(<Image className="w-full rounded-lg object-cover object-center" width={300} height={300} src={urlFor(item.image && item.image[0]).url()} alt={slug} />): (<Image className="h-32 sm:w-full rounded-xl object-cover" src='/assets/no_image.jpg' alt={slug} />)}
+                    { item.image ?(<Image className="w-full rounded-lg object-cover object-center" width={300} height={300} src={urlFor(item.image && item.image[0]).url()} alt={slug} />): (<Image className="h-32 sm:w-full rounded-xl object-cover" src='/assets/no_image.jpg' width={300} height={300} alt={slug} />)}
 
                     
                     <div>
